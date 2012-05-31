@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf13352841629570" configfile="/redes-sociales/src/main/webapp/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="index.xhtml" id="pf13383282017460" referenceLink="//@navigationRule.68/@navigationCase.0/@toViewId|" outlinks="pf13383282017471 pf13383282017472" inlinks="pf13383996764020 pf13384003718341 pf13384003718342 pf13384003718343 pf13384003718344 pf13384003718345 pf13384003718346 pf13384054612760 pf133832820174719" path="/index.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="twitter.xhtml" x="732" y="111" id="pf13383282017473" referenceLink="//@navigationRule.71/@navigationCase.0/@toViewId|" outlinks="pf13383282017474 pf13383282017475 pf13383282017476 pf13383282017477 pf13383282017478 pf13383282017479 pf133832820174710 pf133832820174711 pf13383996764020" inlinks="pf13383282017471 pf13383282017474 pf133832820174712 pf133832820174713 pf133832820174714 pf133832820174715 pf133832820174716 pf133832820174717 pf133832820174718 pf13384067295071 pf13384067295072 pf13384067295073" path="/twitter/twitter.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="listaUsuarios.xhtml" x="384" y="24" id="pf133832820174720" referenceLink="//@navigationRule.68/@fromViewId|" outlinks="pf133832820174714 pf133832820174721 pf133832820174722 pf133832820174723 pf133832820174724 pf133832820174725 pf133832820174726 pf13384054612760" inlinks="pf13383282017475 pf133832820174727 pf133832820174728 pf133832820174729 pf133832820174730 pf133832820174731 pf133832820174732" path="/twitter/listaUsuarios.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="listaSigo.xhtml" x="192" y="264" id="pf133832820174733" referenceLink="//@navigationRule.62/@fromViewId|" outlinks="pf133832820174713 pf133832820174734 pf133832820174728 pf133832820174735 pf133832820174736 pf133832820174737 pf133832820174738 pf13384003718341" inlinks="pf13383282017476 pf133832820174739 pf133832820174722 pf133832820174740 pf133832820174741 pf133832820174742 pf133832820174743" path="/twitter/listaSigo.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="listaSeguidores.xhtml" x="360" y="660" id="pf133832820174744" referenceLink="//@navigationRule.63/@fromViewId|" outlinks="pf133832820174712 pf133832820174739 pf133832820174727 pf133832820174745 pf133832820174746 pf133832820174747 pf133832820174748 pf13384003718342" inlinks="pf13383282017477 pf133832820174734 pf133832820174721 pf133832820174749 pf133832820174750 pf133832820174751 pf133832820174752" path="/twitter/listaSeguidores.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="misTwits.xhtml" x="1188" y="156" id="pf133832820174753" referenceLink="//@navigationRule.70/@fromViewId|" outlinks="pf133832820174715 pf133832820174729 pf133832820174749 pf133832820174740 pf133832820174854 pf133832820174855 pf133832820174856 pf133832820174857 pf13384003718346 pf13384067295072" inlinks="pf13383282017478 pf133832820174723 pf133832820174745 pf133832820174735 pf133832820174858 pf133832820174859 pf133832820174860 pf133832820174857" path="/twitter/misTwits.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="menciones.xhtml" x="1008" y="648" id="pf133832820174861" referenceLink="//@navigationRule.69/@fromViewId|" outlinks="pf133832820174750 pf133832820174741 pf133832820174858 pf133832820174730 pf133832820174716 pf133832820174862 pf133832820174863 pf13384003718343 pf13384067295071" inlinks="pf133832820174746 pf133832820174736 pf133832820174854 pf133832820174724 pf13383282017479 pf133832820174864 pf133832820174865" path="/twitter/menciones.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="descubre.xhtml" x="1500" y="63" id="pf133832820174866" referenceLink="//@navigationRule.71/@fromViewId|" outlinks="pf133832820174864 pf133832820174859 pf133832820174731 pf133832820174751 pf133832820174742 pf133832820174717 pf133832820174867 pf13384003718344 pf13384067295073" inlinks="pf133832820174862 pf133832820174855 pf133832820174725 pf133832820174747 pf133832820174737 pf133832820174710 pf133832820174868" path="/twitter/descubre.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="twitter/mensajesPrivados.xhtml" x="1440" y="645" id="pf133832820174869" referenceLink="//@navigationRule.66/@fromViewId|" outlinks="pf133832820174865 pf133832820174732 pf133832820174860 pf133832820174868 pf133832820174752 pf133832820174743 pf133832820174718 pf13384003718345" inlinks="pf133832820174863 pf133832820174726 pf133832820174856 pf133832820174867 pf133832820174748 pf133832820174738 pf133832820174711" path="/twitter/mensajesPrivados.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="registrar.xhtml" x="102" y="708" id="pf133832820174870" referenceLink="//@navigationRule.60/@fromViewId|" outlinks="pf133832820174719" inlinks="pf13383282017472" path="/registrar.xhtml"/>
+  <links id="pf13383282017471" target="pf13383282017473" source="pf13383282017460" outcome="loginCorrecto" redirect="true"/>
+  <links id="pf13383282017474" target="pf13383282017473" source="pf13383282017473" outcome="nuevoMensajeCorrecto" redirect="true"/>
+  <links id="pf13383282017475" target="pf133832820174720" source="pf13383282017473" outcome="verListaUsuarios" redirect="true"/>
+  <links id="pf13383282017476" target="pf133832820174733" source="pf13383282017473" outcome="verListaSigo" redirect="true"/>
+  <links id="pf13383282017477" target="pf133832820174744" source="pf13383282017473" outcome="verListaSeguidores" redirect="true"/>
+  <links id="pf133832820174712" target="pf13383282017473" source="pf133832820174744" outcome="verPrincipal" redirect="true"/>
+  <links id="pf133832820174713" target="pf13383282017473" source="pf133832820174733" outcome="verPrincipal" redirect="true"/>
+  <links id="pf133832820174714" target="pf13383282017473" source="pf133832820174720" outcome="verPrincipal" redirect="true"/>
+  <links id="pf133832820174734" target="pf133832820174744" source="pf133832820174733" outcome="verListaSeguidores" redirect="true"/>
+  <links id="pf133832820174739" target="pf133832820174733" source="pf133832820174744" outcome="verListaSigo" redirect="true"/>
+  <links id="pf133832820174721" target="pf133832820174744" source="pf133832820174720" outcome="verListaSeguidores" redirect="true"/>
+  <links id="pf133832820174727" target="pf133832820174720" source="pf133832820174744" outcome="verListaUsuarios" redirect="true"/>
+  <links id="pf133832820174728" target="pf133832820174720" source="pf133832820174733" outcome="verListaUsuarios" redirect="true"/>
+  <links id="pf133832820174722" target="pf133832820174733" source="pf133832820174720" outcome="verListaSigo" redirect="true"/>
+  <links id="pf13383282017478" target="pf133832820174753" source="pf13383282017473" outcome="verMisTwits" redirect="true"/>
+  <links id="pf133832820174715" target="pf13383282017473" source="pf133832820174753" outcome="verPrincipal" redirect="true"/>
+  <links id="pf133832820174723" target="pf133832820174753" source="pf133832820174720" outcome="verMisTwits" redirect="true"/>
+  <links id="pf133832820174729" target="pf133832820174720" source="pf133832820174753" outcome="verListaUsuarios" redirect="true"/>
+  <links id="pf133832820174745" target="pf133832820174753" source="pf133832820174744" outcome="verMisTwits" redirect="true"/>
+  <links id="pf133832820174749" target="pf133832820174744" source="pf133832820174753" outcome="verListaSeguidores" redirect="true"/>
+  <links id="pf133832820174735" target="pf133832820174753" source="pf133832820174733" outcome="verMisTwits" redirect="true"/>
+  <links id="pf133832820174740" target="pf133832820174733" source="pf133832820174753" outcome="verListaSigo" redirect="true"/>
+  <links id="pf133832820174746" target="pf133832820174861" source="pf133832820174744" outcome="verMenciones" redirect="true"/>
+  <links id="pf133832820174750" target="pf133832820174744" source="pf133832820174861" outcome="verListaSeguidores" redirect="true"/>
+  <links id="pf133832820174736" target="pf133832820174861" source="pf133832820174733" outcome="verMenciones" redirect="true"/>
+  <links id="pf133832820174741" target="pf133832820174733" source="pf133832820174861" outcome="verListaSigo" redirect="true"/>
+  <links id="pf133832820174854" target="pf133832820174861" source="pf133832820174753" outcome="verMenciones" redirect="true"/>
+  <links id="pf133832820174858" target="pf133832820174753" source="pf133832820174861" outcome="verMisTwits" redirect="true"/>
+  <links id="pf133832820174724" target="pf133832820174861" source="pf133832820174720" outcome="verMenciones" redirect="true"/>
+  <links id="pf133832820174730" target="pf133832820174720" source="pf133832820174861" outcome="verListaUsuarios" redirect="true"/>
+  <links id="pf13383282017479" target="pf133832820174861" source="pf13383282017473" outcome="verMenciones" redirect="true"/>
+  <links id="pf133832820174716" target="pf13383282017473" source="pf133832820174861" outcome="verPrincipal" redirect="true"/>
+  <links id="pf133832820174864" target="pf133832820174861" source="pf133832820174866" outcome="verMenciones" redirect="true"/>
+  <links id="pf133832820174862" target="pf133832820174866" source="pf133832820174861" outcome="verDescubre" redirect="true"/>
+  <links id="pf133832820174859" target="pf133832820174753" source="pf133832820174866" outcome="verMisTwits" redirect="true"/>
+  <links id="pf133832820174855" target="pf133832820174866" source="pf133832820174753" outcome="verDescubre" redirect="true"/>
+  <links id="pf133832820174731" target="pf133832820174720" source="pf133832820174866" outcome="verListaUsuarios" redirect="true"/>
+  <links id="pf133832820174725" target="pf133832820174866" source="pf133832820174720" outcome="verDescubre" redirect="true"/>
+  <links id="pf133832820174751" target="pf133832820174744" source="pf133832820174866" outcome="verListaSeguidores" redirect="true"/>
+  <links id="pf133832820174747" target="pf133832820174866" source="pf133832820174744" outcome="verDescubre" redirect="true"/>
+  <links id="pf133832820174742" target="pf133832820174733" source="pf133832820174866" outcome="verListaSigo" redirect="true"/>
+  <links id="pf133832820174737" target="pf133832820174866" source="pf133832820174733" outcome="verDescubre" redirect="true"/>
+  <links id="pf133832820174717" target="pf13383282017473" source="pf133832820174866" outcome="verPrincipal" redirect="true"/>
+  <links id="pf133832820174710" target="pf133832820174866" source="pf13383282017473" outcome="verDescubre" redirect="true"/>
+  <links id="pf133832820174863" target="pf133832820174869" source="pf133832820174861" outcome="verMensajesPrivados" redirect="true"/>
+  <links id="pf133832820174865" target="pf133832820174861" source="pf133832820174869" outcome="verMenciones" redirect="true"/>
+  <links id="pf133832820174732" target="pf133832820174720" source="pf133832820174869" outcome="verListaUsuarios" redirect="true"/>
+  <links id="pf133832820174726" target="pf133832820174869" source="pf133832820174720" outcome="verMensajesPrivados" redirect="true"/>
+  <links id="pf133832820174860" target="pf133832820174753" source="pf133832820174869" outcome="verMisTwits" redirect="true"/>
+  <links id="pf133832820174856" target="pf133832820174869" source="pf133832820174753" outcome="verMensajesPrivados" redirect="true"/>
+  <links id="pf133832820174867" target="pf133832820174869" source="pf133832820174866" outcome="verMensajesPrivados" redirect="true"/>
+  <links id="pf133832820174868" target="pf133832820174866" source="pf133832820174869" outcome="verDescubre" redirect="true"/>
+  <links id="pf133832820174748" target="pf133832820174869" source="pf133832820174744" outcome="verMensajesPrivados" redirect="true"/>
+  <links id="pf133832820174752" target="pf133832820174744" source="pf133832820174869" outcome="verListaSeguidores" redirect="true"/>
+  <links id="pf133832820174738" target="pf133832820174869" source="pf133832820174733" outcome="verMensajesPrivados" redirect="true"/>
+  <links id="pf133832820174743" target="pf133832820174733" source="pf133832820174869" outcome="verListaSeguidores" redirect="true"/>
+  <links id="pf133832820174711" target="pf133832820174869" source="pf13383282017473" outcome="verMensajesPrivados" redirect="true"/>
+  <links id="pf133832820174718" target="pf13383282017473" source="pf133832820174869" outcome="verPrincipal" redirect="true"/>
+  <links id="pf133832820174857" target="pf133832820174753" source="pf133832820174753" outcome="verMisTwits" redirect="true"/>
+  <links id="pf13383282017472" target="pf133832820174870" source="pf13383282017460" outcome="verRegistrar" redirect="true"/>
+  <links id="pf133832820174719" target="pf13383282017460" source="pf133832820174870" outcome="verPrincipal" redirect="true"/>
+  <links id="pf13383996764020" target="pf13383282017460" source="pf13383282017473" outcome="verIndex" redirect="true"/>
+  <links id="pf13384003718341" target="pf13383282017460" source="pf133832820174733" outcome="verIndex" redirect="true"/>
+  <links id="pf13384003718342" target="pf13383282017460" source="pf133832820174744" outcome="verIndex" redirect="true"/>
+  <links id="pf13384003718343" target="pf13383282017460" source="pf133832820174861" outcome="verIndex" redirect="true"/>
+  <links id="pf13384003718344" target="pf13383282017460" source="pf133832820174866" outcome="verIndex" redirect="true"/>
+  <links id="pf13384003718345" target="pf13383282017460" source="pf133832820174869" outcome="verIndex" redirect="true"/>
+  <links id="pf13384003718346" target="pf13383282017460" source="pf133832820174753" outcome="verIndex" redirect="true"/>
+  <links id="pf13384054612760" target="pf13383282017460" source="pf133832820174720" outcome="verIndex" redirect="true"/>
+  <links id="pf13384067295071" target="pf13383282017473" source="pf133832820174861" outcome="nuevoMensajeCorrecto" redirect="true"/>
+  <links id="pf13384067295072" target="pf13383282017473" source="pf133832820174753" outcome="nuevoMensajeCorrecto" redirect="true"/>
+  <links id="pf13384067295073" target="pf13383282017473" source="pf133832820174866"/>
+</pageflow:Pageflow>

@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html lang="en-US" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a4j="http://richfaces.org/a4j">
+<h:head>
+	<title>Page title</title>
+</h:head>
+<h:body>
+
+
+	<div id="navbar">
+		<span class="inbar"> <h:form>
+				<ul>
+					<li><h:commandLink action="#{usuario.principal}"
+							value="Inicio" /> </li>
+					<li><h:commandLink action="#{usuario.verUsuarios}"
+							value="A quien seguir" /></li>
+					<li><h:commandLink action="#{usuario.menciones}"
+							value="@Menciones" /></li>
+					<li><h:commandLink action="#{usuario.descubre}"
+							value="#Descubre" /></li>
+					<li><h:commandButton value="mp"
+							image="../images/barraSup/mp.jpg"
+							action="#{usuario.verMensajesPrivados}" /></li>
+					<li><h:commandButton value="perfil"
+							image="../images/barraSup/perfil.png">
+							<rich:componentControl target="popupPerfil" operation="show" />
+						</h:commandButton></li>
+					<li><h:commandButton value="Salir"
+							image="../images/barraSup/salir.png"
+							action="#{usuario.destruirSesion()}">
+						</h:commandButton></li>
+					<li><div class="nuevoTwit">
+							<h:commandButton value="Call the popup"
+								image="../images/barraSup/botonNuevoTwit.png">
+								<rich:componentControl target="popup" operation="show" />
+							</h:commandButton>
+						</div></li>
+				</ul>
+			</h:form>
+
+		</span>
+	</div>
+
+	<!-- Panel para escribir un nuevo twit -->
+	<rich:popupPanel id="popup" modal="true" resizeable="false"
+		onmaskclick="#{rich:component('popup')}.hide()">
+		<f:facet name="header">
+			<h:outputText value="Nuevo Twit" />
+		</f:facet>
+		<f:facet name="controls">
+			<h:outputLink value="#"
+				onclick="#{rich:component('popup')}.hide(); return false;">
+                X
+            </h:outputLink>
+		</f:facet>
+		<h:panelGrid columns="1">
+			<h:form>
+				<h:inputTextarea id="nuevoTwit" required="true" rows="7" cols="48"
+					value="#{mensaje.mensaje}" requiredMessage="Campo Obligatorio">
+					<f:attribute name="message" value="Please write something2" />
+					<f:validateLength minimum="1" maximum="140"></f:validateLength>
+					<f:validator validatorId="Validation"></f:validator>
+				</h:inputTextarea>
+				<h:message for="nuevoTwit"></h:message>
+				<br></br>
+				<div class="botonCenter">
+					<h:commandButton value="Enviar" id="enviarTwit"
+						action="#{mensaje.grabarMensaje}" />
+				</div>
+			</h:form>
+
+		</h:panelGrid>
+	</rich:popupPanel>
+
+
+	<!-- Panel para modificar el perfil de usuario -->
+	<rich:popupPanel id="popupPerfil" modal="true" height="240"
+		onmaskclick="#{rich:component('popupPerfil')}.hide()">
+		<f:facet name="header">
+			<h:outputText value="Modificar Perfil" />
+		</f:facet>
+		<f:facet name="controls">
+			<h:outputLink value="#"
+				onclick="#{rich:component('popupPerfil')}.hide(); return false;">
+                X
+            </h:outputLink>
+		</f:facet>
+		<h:form>
+			<h:panelGrid columns="2">
+				<h:outputLabel for="web" value="Web"></h:outputLabel>
+				<h:inputText id="web" value="#{usuario.web}" />
+				<h:outputLabel for="ubicacion" value="Ubicacion"></h:outputLabel>
+				<h:inputText id="ubicacion" value="#{usuario.ubicacion}" />
+				<h:outputLabel for="urlImagen" value="URL Imagen"></h:outputLabel>
+				<h:inputText id="urlImagen" value="#{usuario.urlImagen}" />
+				<h:outputLabel for="biografia" value="Biografia"></h:outputLabel>
+				<h:inputTextarea id="biografia" required="false" rows="7" cols="40"
+					value="#{usuario.biografia}" />
+			</h:panelGrid>
+			<div class="botonCenter">
+				<br></br>
+				<p>
+					<h:commandButton value="Modificar" id="modificarPerfil"
+						action="#{usuario.modificarPerfil}" />
+				</p>
+			</div>
+		</h:form>
+	</rich:popupPanel>
+
+</h:body>
+</html>

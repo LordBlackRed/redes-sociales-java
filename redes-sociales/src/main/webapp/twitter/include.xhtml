@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich">
+
+
+
+	<div id="sidebar">
+
+		<!-- ADD YOUR NAME & JOB TITLE HERE -->
+		<h:outputText value="#{usuario.nombre}" styleClass="h1" />
+
+		<!-- THIS IS THE NAVIGATION AREA - ADD YOUR SITE'S PAGES HERE -->
+		<h:form>
+			<ul id="nav">
+
+				<li><h:outputText value="#{usuario.numMisTwits}"
+						styleClass="h4" />
+					<div class="include">
+						<h:commandLink value="Tweets" action="#{usuario.misTwits}" />
+					</div></li>
+				<li><h:outputText
+						value="#{usuario.followsesForSeguidos.size()}" styleClass="h4" />
+					<div class="include">
+						<h:commandLink action="#{usuario.sigo}" value="Siguiendo" />
+					</div></li>
+				<li><h:outputText value="#{usuario.followsesForSigo.size()}"
+						styleClass="h4" />
+					<div class="include">
+						<h:commandLink value="Seguidores" action="#{usuario.seguidores}" />
+					</div></li>
+			</ul>
+		</h:form>
+		<!--end nav-->
+
+		<div id="bio">
+			<h:outputText value="@#{usuario.nick}" styleClass="h2" />
+			<br></br>
+			<br></br>
+			<img class="author-img" src="#{usuario.urlImagen}"
+				alt="Foto de #{usuario.nick}" /> <br></br>
+			
+			<h:outputText value="Biografia" styleClass="h3" />
+			<p>
+				<h:outputText value="#{usuario.biografia}" />
+			</p>
+
+		</div>
+		<!--end bio-->
+
+		<div class="sidebar-line"></div>
+
+		<div id="freelance-services">
+
+			<h:outputText value="Web" styleClass="h3" />
+			<p>
+				<h:outputText value="#{usuario.web}" />
+			</p>
+
+				<h:outputText value="Ubicacion" styleClass="h3"/>
+			<p>
+				<h:outputText value="#{usuario.ubicacion}" />
+			</p>
+
+		</div>
+		<!--end freelance-services-->
+
+		<div id="footer">
+
+			<div xmlns:cc="http://creativecommons.org/ns#"
+				about="http://creativecommons.org">
+				<a rel="cc:attributionURL" property="cc:attributionName"
+					href="http://creativecommons.org">Creative Commons</a> / <a
+					rel="license" href="http://creativecommons.org/licenses/by/3.0/">CC
+					BY 3.0</a>
+			</div>
+
+		</div>
+		<!--end footer-->
+
+	</div>
+	<!--end sidebar-->
+
+</ui:composition>
+</html>

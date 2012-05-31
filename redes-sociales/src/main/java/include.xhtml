@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html">
+<body>
+	<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:f="http://java.sun.com/jsf/core"
+		xmlns:h="http://java.sun.com/jsf/html"
+		xmlns:ui="http://java.sun.com/jsf/facelets"
+		xmlns:a4j="http://richfaces.org/a4j"
+		xmlns:rich="http://richfaces.org/rich">
+		<div id="sidebar">
+
+			<!-- ADD YOUR NAME & JOB TITLE HERE -->
+			<h1>[ADD YOUR NAME]</h1>
+			<h2>[ADD YOUR JOB TITLE]</h2>
+
+			<!-- THIS IS THE NAVIGATION AREA - ADD YOUR SITE'S PAGES HERE -->
+			<ul id="nav">
+
+				<li class="current"><a href="index.html"
+					title="Link To The Home Page">Home</a><span>/</span></li>
+				<li><a href="services.html" title="Link To The Services Page">Services</a><span>/</span></li>
+				<li><a href="articles.html" title="Link To The Articles Page">Articles</a><span>/</span></li>
+				<li><a href="contact.html" title="Link To The Contact Page">Contact</a></li>
+
+			</ul>
+			<!--end nav-->
+
+			<div id="bio">
+
+				<!-- ADD A PHOTO OF YOURSELF HERE - YOU CAN USE ANY SIZE YOU LIKE, ALTHOUGH THE RECOMMENDED DIMENSIONS ARE 140x150px -->
+				<img class="author-img" src="[ADD A URL TO YOUR PHOTO]"
+					alt="Photo of [ADD YOUR NAME]" />
+
+				<h3>About Me</h3>
+				<p>[ADD AN OVERVIEW ABOUT YOURSELF HERE]</p>
+
+			</div>
+			<!--end bio-->
+
+			<div class="sidebar-line"></div>
+
+			<div id="freelance-services">
+
+				<h3>Freelance Services</h3>
+
+				<p>[PROVIDE AN OVERVIEW ABOUT YOUR SERVICES HERE]</p>
+
+				<p id="status">
+					<span>Current Status</span>: Taking On New Clients
+				</p>
+
+			</div>
+			<!--end freelance-services-->
+
+			<div class="sidebar-line"></div>
+
+			<div id="testimonials">
+
+				<h3>Client Testimonial</h3>
+
+				<div class="testimonial">
+
+					<p>[ADD A TESTIMONIAL HERE]</p>
+
+					<p class="author-details">[ADD TESTIMONIAL AUTHOR NAME]</p>
+
+				</div>
+				<!--end testimonial-->
+
+				<p>
+					<a href="#" title="Link To Testimonials Page">View All
+						Testimonials &raquo;</a>
+				</p>
+
+			</div>
+			<!--end testimonials-->
+
+			<div id="footer">
+
+				<p>Copyright &copy; 2011 / [ADD YOUR NAME HERE] / All Rights
+					Reserved</p>
+
+			</div>
+			<!--end footer-->
+
+		</div>
+		<!--end sidebar-->
+
+	</ui:composition>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich">
+
+<h:head>
+	<h:outputStylesheet library="css" name="style.css" />
+	<title>JSF Demo</title>
+</h:head>
+<h:body>
+
+	<f:view>
+
+		<ui:include src="barraSup.xhtml" />
+
+		<div id="wrap">
+
+			<ui:include src="include.xhtml" />
+
+			<div id="content">
+				<h:messages></h:messages>
+				<rich:panel>
+					<f:facet name="header">
+						<h:outputText value="Mensajes Privados" />
+					</f:facet>
+
+					<div class="centrarContent">
+						<rich:dataTable id="tablaMensajesPrivados"
+							value="#{usuario.mensajesPrivadosesForUsuarioReceptor}"
+							var="menP" reRender="masterDS" height="520px" width="100px">
+
+							<rich:column rowspan="1" styleClass="rf-dt-c">
+								<h:graphicImage
+									value="#{menP.usuariosByUsuarioEmisor.urlImagen}" width="50"
+									height="50" />
+								<rich:tooltip>
+									<span style="white-space: nowrap"> <h:outputText
+											value="#{menP.fecha}"></h:outputText>
+									</span>
+								</rich:tooltip>
+							</rich:column>
+							<rich:column>
+								<h:outputText value="#{menP.usuariosByUsuarioEmisor.nombre}"
+									styleClass="h5" />
+								<h:outputText value="@#{menP.usuariosByUsuarioEmisor.nick}"
+									styleClass="h6" />
+								<br></br>
+								<h:outputText value="#{menP.mensaje}" styleClass="twit"></h:outputText>
+								<rich:tooltip>
+									<span style="white-space: nowrap"> <h:outputText
+											value="#{menP.fecha}"></h:outputText>
+									</span>
+								</rich:tooltip>
+							</rich:column>
+						</rich:dataTable>
+
+					</div>
+				</rich:panel>
+				<div class="right">
+					<h:commandButton value="Call the popup"
+						image="../images/add-mp.png">
+						<rich:componentControl target="popupMensajePrivado"
+							operation="show" />
+					</h:commandButton>
+					<rich:tooltip>
+						<span style="white-space: nowrap"> <h:outputText
+								value="Nuevo Mensaje Privado"></h:outputText>
+						</span>
+					</rich:tooltip>
+				</div>
+			</div>
+			<!--end content-->
+
+		</div>
+		<!--end wrap-->
+	</f:view>
+
+	<!-- Panel nuevo mensaje privado -->
+
+	<rich:popupPanel id="popupMensajePrivado" modal="true" height="240"
+		onmaskclick="#{rich:component('popupMensajePrivado')}.hide()">
+		<f:facet name="header">
+			<h:outputText value="Nuevo Mensaje Privado" />
+		</f:facet>
+		<f:facet name="controls">
+			<h:outputLink value="#"
+				onclick="#{rich:component('popupMensajePrivado')}.hide(); return false;">
+                X
+            </h:outputLink>
+		</f:facet>
+		<h:form>
+			<h:panelGrid columns="2">
+				<h:outputLabel for="usuarioRte" value="Remitente"></h:outputLabel>
+				<h:selectOneMenu id="usuarioRte" value="#{mensaje.idUsuarioRte}">
+					<f:selectItems value="#{usuario.followsesForSigo}" var="usRte"
+						itemValue="#{usRte.id}" itemLabel="#{usRte.nick}" />
+				</h:selectOneMenu>
+
+				<h:outputLabel for="mensajePrivado" value="Mensaje"></h:outputLabel>
+				<h:inputTextarea id="mensajePrivado" value="#{mensaje.mensaje}"
+					rows="8" cols="40" />
+			</h:panelGrid>
+			<div class="botonCenter">
+				<br></br>
+				<p>
+					<h:commandButton value="Enviar"
+						id="enviarMensajePrivado" action="#{mensaje.grabarMensajePrivado}" />
+				</p>
+			</div>
+		</h:form>
+	</rich:popupPanel>
+</h:body>
+</html>

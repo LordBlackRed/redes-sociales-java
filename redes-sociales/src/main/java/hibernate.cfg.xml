@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+                                         "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="hibernate.connection.url">jdbc:mysql://localhost/twitter</property>
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.connection.password">root</property>
+
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+		<!-- JDBC connection pool (use the built-in) -->
+		<property name="connection.pool_size">2</property>
+
+		<property name="hibernate.transaction.factory_class">org.hibernate.transaction.JDBCTransactionFactory</property>
+
+		<!-- Enable Hibernate's current session context -->
+		<property name="current_session_context_class">thread</property>
+
+		<!-- Disable the second-level cache -->
+		<property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
+
+
+		<!-- Hibernate XML mapping files -->
+		<mapping resource="twitter/modelo/Usuarios.hbm.xml" />
+		<mapping resource="twitter/modelo/Follows.hbm.xml" />
+		<mapping resource="twitter/modelo/Mensajes.hbm.xml" />
+		<mapping resource="twitter/modelo/MensajesPrivados.hbm.xml" />
+
+	</session-factory>
+</hibernate-configuration>
