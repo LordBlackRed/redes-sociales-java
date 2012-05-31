@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich">
+
+<h:head>
+	<h:outputStylesheet library="css" name="style.css" />
+	<title>JSF Demo</title>
+</h:head>
+<h:body>
+	<f:view>
+		<div id="wrap">
+
+			<ui:include src="include.xhtml" />
+
+			<div id="content">
+				<h:messages></h:messages>
+				<h:form>
+
+					<br></br>
+					<h:commandLink value="Registrarse" action="#{usuario.registrarse}" />
+				</h:form>
+			</div>
+			<!--end content-->
+
+		</div>
+		<!--end wrap-->
+	</f:view>
+</h:body>
+</html>

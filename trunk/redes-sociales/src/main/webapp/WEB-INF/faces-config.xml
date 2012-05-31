@@ -1,0 +1,675 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<faces-config xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_1.xsd"
+	version="2.1">
+	
+	<validator>
+		<validator-id>Validation</validator-id>
+		<validator-class>twitter.clases.Validation</validator-class>
+	</validator>
+	
+	<managed-bean>
+		<managed-bean-name>usuario</managed-bean-name>
+		<managed-bean-class>twitter.beans.UsuarioBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>mensaje</managed-bean-name>
+		<managed-bean-class>twitter.beans.MensajeBean</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>twitter</managed-bean-name>
+		<managed-bean-class>twitter.beans.TwitterBean</managed-bean-class>
+		<managed-bean-scope>application</managed-bean-scope>
+	</managed-bean>
+	<navigation-rule>
+		<display-name>index.xhtml</display-name>
+		<from-view-id>/index.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>loginCorrecto</from-outcome>
+			<to-view-id>/twitter/twitter.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>twitter.xhtml</display-name>
+		<from-view-id>/twitter/twitter.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>nuevoMensajeCorrecto</from-outcome>
+			<to-view-id>/twitter/twitter.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>twitter.xhtml</display-name>
+		<from-view-id>/twitter/twitter.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>verListaUsuarios</from-outcome>
+			<to-view-id>/twitter/listaUsuarios.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>twitter.xhtml</display-name>
+		<from-view-id>/twitter/twitter.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>verListaSigo</from-outcome>
+			<to-view-id>/twitter/listaSigo.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>twitter.xhtml</display-name>
+		<from-view-id>/twitter/twitter.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>verListaSeguidores</from-outcome>
+			<to-view-id>/twitter/listaSeguidores.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>listaSeguidores.xhtml</display-name>
+		<from-view-id>/twitter/listaSeguidores.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>verPrincipal</from-outcome>
+			<to-view-id>/twitter/twitter.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>listaSigo.xhtml</display-name>
+		<from-view-id>/twitter/listaSigo.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>verPrincipal</from-outcome>
+			<to-view-id>/twitter/twitter.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>listaUsuarios.xhtml</display-name>
+		<from-view-id>/twitter/listaUsuarios.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>verPrincipal</from-outcome>
+			<to-view-id>/twitter/twitter.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>listaSigo.xhtml</display-name>
+		<from-view-id>/twitter/listaSigo.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>verListaSeguidores</from-outcome>
+			<to-view-id>/twitter/listaSeguidores.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>listaSeguidores.xhtml</display-name>
+		<from-view-id>/twitter/listaSeguidores.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>verListaSigo</from-outcome>
+			<to-view-id>/twitter/listaSigo.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>listaUsuarios.xhtml</display-name>
+		<from-view-id>/twitter/listaUsuarios.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>verListaSeguidores</from-outcome>
+			<to-view-id>/twitter/listaSeguidores.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>listaSeguidores.xhtml</display-name>
+		<from-view-id>/twitter/listaSeguidores.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>verListaUsuarios</from-outcome>
+			<to-view-id>/twitter/listaUsuarios.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>listaSigo.xhtml</display-name>
+		<from-view-id>/twitter/listaSigo.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>verListaUsuarios</from-outcome>
+			<to-view-id>/twitter/listaUsuarios.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>listaUsuarios.xhtml</display-name>
+		<from-view-id>/twitter/listaUsuarios.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>verListaSigo</from-outcome>
+			<to-view-id>/twitter/listaSigo.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>twitter.xhtml</display-name>
+		<from-view-id>/twitter/twitter.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>verMisTwits</from-outcome>
+			<to-view-id>/twitter/misTwits.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>misTwits.xhtml</display-name>
+		<from-view-id>/twitter/misTwits.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>verPrincipal</from-outcome>
+			<to-view-id>/twitter/twitter.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>listaUsuarios.xhtml</display-name>
+		<from-view-id>/twitter/listaUsuarios.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>verMisTwits</from-outcome>
+			<to-view-id>/twitter/misTwits.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>misTwits.xhtml</display-name>
+		<from-view-id>/twitter/misTwits.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>verListaUsuarios</from-outcome>
+			<to-view-id>/twitter/listaUsuarios.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>listaSeguidores.xhtml</display-name>
+		<from-view-id>/twitter/listaSeguidores.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>verMisTwits</from-outcome>
+			<to-view-id>/twitter/misTwits.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>misTwits.xhtml</display-name>
+		<from-view-id>/twitter/misTwits.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>verListaSeguidores</from-outcome>
+			<to-view-id>/twitter/listaSeguidores.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>listaSigo.xhtml</display-name>
+		<from-view-id>/twitter/listaSigo.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>verMisTwits</from-outcome>
+			<to-view-id>/twitter/misTwits.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>misTwits.xhtml</display-name>
+		<from-view-id>/twitter/misTwits.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>verListaSigo</from-outcome>
+			<to-view-id>/twitter/listaSigo.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>listaSeguidores.xhtml</display-name>
+		<from-view-id>/twitter/listaSeguidores.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>verMenciones</from-outcome>
+			<to-view-id>/twitter/menciones.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>menciones.xhtml</display-name>
+		<from-view-id>/twitter/menciones.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>verListaSeguidores</from-outcome>
+			<to-view-id>/twitter/listaSeguidores.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>listaSigo.xhtml</display-name>
+		<from-view-id>/twitter/listaSigo.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>verMenciones</from-outcome>
+			<to-view-id>/twitter/menciones.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>menciones.xhtml</display-name>
+		<from-view-id>/twitter/menciones.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>verListaSigo</from-outcome>
+			<to-view-id>/twitter/listaSigo.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>misTwits.xhtml</display-name>
+		<from-view-id>/twitter/misTwits.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>verMenciones</from-outcome>
+			<to-view-id>/twitter/menciones.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>menciones.xhtml</display-name>
+		<from-view-id>/twitter/menciones.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>verMisTwits</from-outcome>
+			<to-view-id>/twitter/misTwits.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>listaUsuarios.xhtml</display-name>
+		<from-view-id>/twitter/listaUsuarios.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>verMenciones</from-outcome>
+			<to-view-id>/twitter/menciones.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>menciones.xhtml</display-name>
+		<from-view-id>/twitter/menciones.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>verListaUsuarios</from-outcome>
+			<to-view-id>/twitter/listaUsuarios.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>twitter.xhtml</display-name>
+		<from-view-id>/twitter/twitter.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>verMenciones</from-outcome>
+			<to-view-id>/twitter/menciones.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>menciones.xhtml</display-name>
+		<from-view-id>/twitter/menciones.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>verPrincipal</from-outcome>
+			<to-view-id>/twitter/twitter.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>descubre.xhtml</display-name>
+		<from-view-id>/twitter/descubre.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>verMenciones</from-outcome>
+			<to-view-id>/twitter/menciones.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>menciones.xhtml</display-name>
+		<from-view-id>/twitter/menciones.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>verDescubre</from-outcome>
+			<to-view-id>/twitter/descubre.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>descubre.xhtml</display-name>
+		<from-view-id>/twitter/descubre.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>verMisTwits</from-outcome>
+			<to-view-id>/twitter/misTwits.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>misTwits.xhtml</display-name>
+		<from-view-id>/twitter/misTwits.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>verDescubre</from-outcome>
+			<to-view-id>/twitter/descubre.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>descubre.xhtml</display-name>
+		<from-view-id>/twitter/descubre.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>verListaUsuarios</from-outcome>
+			<to-view-id>/twitter/listaUsuarios.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>listaUsuarios.xhtml</display-name>
+		<from-view-id>/twitter/listaUsuarios.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>verDescubre</from-outcome>
+			<to-view-id>/twitter/descubre.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>descubre.xhtml</display-name>
+		<from-view-id>/twitter/descubre.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>verListaSeguidores</from-outcome>
+			<to-view-id>/twitter/listaSeguidores.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>listaSeguidores.xhtml</display-name>
+		<from-view-id>/twitter/listaSeguidores.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>verDescubre</from-outcome>
+			<to-view-id>/twitter/descubre.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>descubre.xhtml</display-name>
+		<from-view-id>/twitter/descubre.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>verListaSigo</from-outcome>
+			<to-view-id>/twitter/listaSigo.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>listaSigo.xhtml</display-name>
+		<from-view-id>/twitter/listaSigo.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>verDescubre</from-outcome>
+			<to-view-id>/twitter/descubre.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>descubre.xhtml</display-name>
+		<from-view-id>/twitter/descubre.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>verPrincipal</from-outcome>
+			<to-view-id>/twitter/twitter.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>twitter.xhtml</display-name>
+		<from-view-id>/twitter/twitter.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>verDescubre</from-outcome>
+			<to-view-id>/twitter/descubre.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>menciones.xhtml</display-name>
+		<from-view-id>/twitter/menciones.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>verMensajesPrivados</from-outcome>
+			<to-view-id>/twitter/mensajesPrivados.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>twitter/mensajesPrivados.xhtml</display-name>
+		<from-view-id>/twitter/mensajesPrivados.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>verMenciones</from-outcome>
+			<to-view-id>/twitter/menciones.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>twitter/mensajesPrivados.xhtml</display-name>
+		<from-view-id>/twitter/mensajesPrivados.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>verListaUsuarios</from-outcome>
+			<to-view-id>/twitter/listaUsuarios.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>listaUsuarios.xhtml</display-name>
+		<from-view-id>/twitter/listaUsuarios.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>verMensajesPrivados</from-outcome>
+			<to-view-id>/twitter/mensajesPrivados.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>twitter/mensajesPrivados.xhtml</display-name>
+		<from-view-id>/twitter/mensajesPrivados.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>verMisTwits</from-outcome>
+			<to-view-id>/twitter/misTwits.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>misTwits.xhtml</display-name>
+		<from-view-id>/twitter/misTwits.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>verMensajesPrivados</from-outcome>
+			<to-view-id>/twitter/mensajesPrivados.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>descubre.xhtml</display-name>
+		<from-view-id>/twitter/descubre.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>verMensajesPrivados</from-outcome>
+			<to-view-id>/twitter/mensajesPrivados.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>twitter/mensajesPrivados.xhtml</display-name>
+		<from-view-id>/twitter/mensajesPrivados.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>verDescubre</from-outcome>
+			<to-view-id>/twitter/descubre.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>listaSeguidores.xhtml</display-name>
+		<from-view-id>/twitter/listaSeguidores.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>verMensajesPrivados</from-outcome>
+			<to-view-id>/twitter/mensajesPrivados.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>twitter/mensajesPrivados.xhtml</display-name>
+		<from-view-id>/twitter/mensajesPrivados.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>verListaSeguidores</from-outcome>
+			<to-view-id>/twitter/listaSeguidores.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>listaSigo.xhtml</display-name>
+		<from-view-id>/twitter/listaSigo.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>verMensajesPrivados</from-outcome>
+			<to-view-id>/twitter/mensajesPrivados.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>twitter/mensajesPrivados.xhtml</display-name>
+		<from-view-id>/twitter/mensajesPrivados.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>verListaSeguidores</from-outcome>
+			<to-view-id>/twitter/listaSigo.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>twitter.xhtml</display-name>
+		<from-view-id>/twitter/twitter.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>verMensajesPrivados</from-outcome>
+			<to-view-id>/twitter/mensajesPrivados.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>twitter/mensajesPrivados.xhtml</display-name>
+		<from-view-id>/twitter/mensajesPrivados.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>verPrincipal</from-outcome>
+			<to-view-id>/twitter/twitter.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>misTwits.xhtml</display-name>
+		<from-view-id>/twitter/misTwits.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>verMisTwits</from-outcome>
+			<to-view-id>/twitter/misTwits.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>index.xhtml</display-name>
+		<from-view-id>/index.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>verRegistrar</from-outcome>
+			<to-view-id>/registrar.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>twitter.xhtml</display-name>
+		<from-view-id>/twitter/twitter.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>verIndex</from-outcome>
+			<to-view-id>/index.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>listaSigo.xhtml</display-name>
+		<from-view-id>/twitter/listaSigo.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>verIndex</from-outcome>
+			<to-view-id>/index.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>listaSeguidores.xhtml</display-name>
+		<from-view-id>/twitter/listaSeguidores.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>verIndex</from-outcome>
+			<to-view-id>/index.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>menciones.xhtml</display-name>
+		<from-view-id>/twitter/menciones.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>verIndex</from-outcome>
+			<to-view-id>/index.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>descubre.xhtml</display-name>
+		<from-view-id>/twitter/descubre.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>verIndex</from-outcome>
+			<to-view-id>/index.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>twitter/mensajesPrivados.xhtml</display-name>
+		<from-view-id>/twitter/mensajesPrivados.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>verIndex</from-outcome>
+			<to-view-id>/index.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>misTwits.xhtml</display-name>
+		<from-view-id>/twitter/misTwits.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>verIndex</from-outcome>
+			<to-view-id>/index.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>listaUsuarios.xhtml</display-name>
+		<from-view-id>/twitter/listaUsuarios.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>verIndex</from-outcome>
+			<to-view-id>/index.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>menciones.xhtml</display-name>
+		<from-view-id>/twitter/menciones.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>nuevoMensajeCorrecto</from-outcome>
+			<to-view-id>/twitter/twitter.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>misTwits.xhtml</display-name>
+		<from-view-id>/twitter/misTwits.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>nuevoMensajeCorrecto</from-outcome>
+			<to-view-id>/twitter/twitter.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>descubre.xhtml</display-name>
+		<from-view-id>/twitter/descubre.xhtml</from-view-id>
+		<navigation-case>
+			<to-view-id>/twitter/twitter.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>registrar.xhtml</display-name>
+		<from-view-id>/registrar.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>verPrincipal</from-outcome>
+			<to-view-id>/index.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	
+</faces-config>

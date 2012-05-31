@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 28-may-2012 18:28:12 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="twitter.modelo.Mensajes" table="mensajes" catalog="twitter">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="usuarios" class="twitter.modelo.Usuarios" fetch="select">
+            <column name="idUsuario" />
+        </many-to-one>
+        <property name="mensaje" type="string">
+            <column name="mensaje" length="250" not-null="true" />
+        </property>
+        <property name="fecha" type="timestamp">
+            <column name="fecha" length="19" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

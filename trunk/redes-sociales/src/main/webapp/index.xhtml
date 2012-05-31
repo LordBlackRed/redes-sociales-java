@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich">
+
+<h:head>
+	<h:outputStylesheet library="css" name="style.css" />
+	<title>JSF Demo</title>
+</h:head>
+<h:body>
+	<f:view>
+
+		<div id="wrap">
+
+			<div id="contentIndex">
+				<h:form id="formLogin">
+					<rich:panel>
+						<f:facet name="header">
+							<h:outputText value="Login Usuario"></h:outputText>
+						</f:facet>
+						<h:panelGrid columns="3">
+							<h:outputLabel for="usuario">Usuario: </h:outputLabel>
+							<h:inputText id="usuario" value="#{usuario.nick}" required="true"
+								requiredMessage="Campo no relleno">
+								<f:attribute name="message" value="Please write something2" />
+								<f:validator validatorId="Validation"></f:validator>
+							</h:inputText>
+							<h:message for="usuario"></h:message>
+							<h:outputLabel for="pass">Pass: </h:outputLabel>
+							<h:inputSecret id="pass" value="#{usuario.pass}" required="true"
+								requiredMessage="Campo no relleno">
+								<f:attribute name="message" value="Please write something2" />
+								<f:validator validatorId="Validation"></f:validator>
+							</h:inputSecret>
+							<h:message for="pass"></h:message>
+							<h:commandButton action="#{usuario.loguearUsuario}"
+								value="Enviar" />
+							<br></br>
+						</h:panelGrid>
+					</rich:panel>
+				</h:form>
+				<div class="right">
+				<h:form id="formVerRegistrar">
+					<h:commandLink value="Registrarse" action="#{usuario.registrarse}" />
+				</h:form>
+				</div>
+			</div>
+			<!--end content-->
+
+		</div>
+		<!--end wrap-->
+	</f:view>
+</h:body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:a4j="http://richfaces.org/a4j"
+	xmlns:rich="http://richfaces.org/rich">
+
+<h:head>
+	<h:outputStylesheet library="css" name="style.css" />
+	<title>JSF Demo</title>
+</h:head>
+<h:body>
+	<f:view>
+
+		<div id="wrap">
+
+			<div id="contentIndex">
+				<rich:panel>
+					<h:form id="formRegistrar">
+						<h:panelGrid columns="3">
+							<h:outputLabel for="nombreUsuarioR">Nombre: </h:outputLabel>
+							<h:inputText id="nombreUsuarioR" value="#{usuario.nombre}"
+								required="true" requiredMessage="Campo obligatorio">
+								<f:attribute name="message" value="Please write something2" />
+								<f:validator validatorId="Validation"></f:validator>
+							</h:inputText>
+							<h:message for="nombreUsuarioR"></h:message>
+							<h:outputLabel for="nickR">Nick: </h:outputLabel>
+							<h:inputText id="nickR" value="#{usuario.nick}"
+								requiredMessage="Campo obligatorio" required="true">
+								<f:attribute name="message" value="Please write something2" />
+								<f:validator validatorId="Validation"></f:validator>
+							</h:inputText>
+							<h:message for="nickR"></h:message>
+							<h:outputLabel for="passR">Password: </h:outputLabel>
+							<h:inputSecret id="passR" value="#{usuario.pass}" required="true"
+								requiredMessage="Campo obligatorio">
+								<f:attribute name="message" value="Please write something2" />
+								<f:validator validatorId="Validation"></f:validator>
+							</h:inputSecret>
+							<h:message for="passR"></h:message>
+						</h:panelGrid>
+						<h:panelGrid columns="4">
+							<h:outputLabel for="ubicacion">Ubicacion: </h:outputLabel>
+							<h:inputText id="ubicacion" value="#{usuario.ubicacion}" />
+							<h:outputLabel for="web">Web: </h:outputLabel>
+							<h:inputText id="web" value="#{usuario.web}" />
+							<h:outputLabel for="url">URL Imagen: </h:outputLabel>
+							<h:inputText id="url" value="#{usuario.urlImagen}" />
+						</h:panelGrid>
+						<h:panelGrid columns="2">
+							<h:outputLabel for="biografia">Biografia: </h:outputLabel>
+							<h:inputTextarea rows="6" cols="78" id="biografia"
+								value="#{usuario.biografia}" />
+						</h:panelGrid>
+						<div class="botonCenter">
+							<h:commandButton action="#{usuario.registrarUsuario}"
+								value="Enviar" />
+						</div>
+					</h:form>
+				</rich:panel>
+			</div>
+			<!--end content-->
+
+		</div>
+		<!--end wrap-->
+	</f:view>
+</h:body>
+</html>
