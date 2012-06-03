@@ -10,7 +10,7 @@
 
 <h:head>
 	<h:outputStylesheet library="css" name="style.css" />
-	<title>JSF Demo</title>
+	<title>Twitter</title>
 </h:head>
 <h:body>
 	<f:view>
@@ -38,16 +38,18 @@
 								<f:validator validatorId="Validation"></f:validator>
 							</h:inputSecret>
 							<h:message for="pass"></h:message>
-							<h:commandButton action="#{usuario.loguearUsuario}"
-								value="Enviar" />
+							<div class="botonCenter">
+								<h:commandButton action="#{usuario.loguearUsuario}"
+									value="Enviar" />
+							</div>
 							<br></br>
 						</h:panelGrid>
 					</rich:panel>
 				</h:form>
 				<div class="right">
-				<h:form id="formVerRegistrar">
-					<h:commandLink value="Registrarse" action="#{usuario.registrarse}" />
-				</h:form>
+					<h:form id="formVerRegistrar">
+						<h:commandLink value="Registrarse" action="#{usuario.registrarse}" />
+					</h:form>
 				</div>
 			</div>
 			<!--end content-->
